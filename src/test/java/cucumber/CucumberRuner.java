@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         plugin = "json:target/cucumber-report.json",
         features = "src/test/resources/suites/feature",
         glue = "cucumber.stepdefenitions",
-tags = "@sber")
+tags = "@all")
 
 
 public class CucumberRuner extends AbstractTestNGCucumberTests {
