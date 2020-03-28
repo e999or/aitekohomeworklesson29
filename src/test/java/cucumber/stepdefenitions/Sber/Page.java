@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class Page {
+
     AbstractPage abstractPage = new AbstractPage();
     @Тогда("переход осуществлен, проверяем название страницы банка{string}.")
     public void chekDepositTitle(String titleText) {
