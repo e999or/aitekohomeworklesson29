@@ -14,7 +14,7 @@ public class AbstractPage {
     }
 
     public AbstractPage takeLinkAbstrct(String string) {
-        $(By.linkText(string)).shouldBe(visible).click();
+        $(By.linkText(string)).click();
         return this;
     }
 }
