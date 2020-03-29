@@ -3,8 +3,11 @@ package com.github.e999or.aitekolesson29.AvtoRu;
 import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class MainPage extends PostCount {
 
@@ -12,6 +15,10 @@ public class MainPage extends PostCount {
 
     public MainPage openAvtoMP() {
         Selenide.open("https://www.auto.ru");
+        if($x("//span[contains(text(),'Понятно, спасибо')]").isDisplayed()) {
+            $x("//span[contains(text(),'Понятно, спасибо')]").click();
+        }
+
         return this;
     }
 
