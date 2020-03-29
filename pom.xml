@@ -17,7 +17,7 @@
     <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
     <selenium-java.version>3.141.59</selenium-java.version>
     <webdrivermanager.version>3.8.1</webdrivermanager.version>
-    <selenide.version>5.9.0</selenide.version>
+    <selenide.version>5.10.0</selenide.version>
 
   </properties>
 
