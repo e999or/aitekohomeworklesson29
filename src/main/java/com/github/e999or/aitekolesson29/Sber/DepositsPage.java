@@ -1,6 +1,5 @@
 package com.github.e999or.aitekolesson29.Sber;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
