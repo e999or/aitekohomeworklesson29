@@ -9,11 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class AbstractPage {
 
     public void closeCookieWarning(){
-        if($(".cookie-warning__close").isDisplayed()){
-            $(".cookie-warning__close").click();
-        }
-        else
-            closeCookieWarning();
+        $(".cookie-warning__close").click();
     }
 
     public AbstractPage chekTitleAbstract(String string) {
