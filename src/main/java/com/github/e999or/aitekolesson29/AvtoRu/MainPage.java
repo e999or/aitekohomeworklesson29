@@ -15,8 +15,8 @@ public class MainPage extends PostCount {
 
     public MainPage openAvtoMP() {
         Selenide.open("https://www.auto.ru");
-        if($x("//span[contains(text(),'Понятно, спасибо')]").isDisplayed()) {
-            $x("//span[contains(text(),'Понятно, спасибо')]").click();
+        if($x("//div[@class='PromoPopupHoliday__buttons']//following::span/span").isDisplayed()) {
+            $x("//div[@class='PromoPopupHoliday__buttons']//following::span/span").click();
         }
 
         return this;

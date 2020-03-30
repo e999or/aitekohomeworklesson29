@@ -12,7 +12,7 @@ public class PrepareHook {
     public void prepareBrauser(){
        WebDriverManager.chromedriver().setup();
        Configuration.browser = "chrome";
-       Configuration.timeout = 30000;
+       Configuration.timeout = 20000;
     }
 
     @After
