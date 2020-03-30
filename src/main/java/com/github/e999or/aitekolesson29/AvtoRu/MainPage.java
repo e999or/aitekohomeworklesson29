@@ -2,12 +2,10 @@ package com.github.e999or.aitekolesson29.AvtoRu;
 
 import com.codeborne.selenide.Selenide;
 import org.testng.Assert;
-
-import java.util.concurrent.TimeUnit;
-
+import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+
 
 public class MainPage extends PostCount {
 
@@ -15,10 +13,7 @@ public class MainPage extends PostCount {
 
     public MainPage openAvtoMP() {
         Selenide.open("https://www.auto.ru");
-        if($x("//div[@class='PromoPopupHoliday__buttons']//following::span/span").isDisplayed()) {
-            $x("//div[@class='PromoPopupHoliday__buttons']//following::span/span").click();
-        }
-
+        $x("//span[contains(text(),'Понятно, спасибо')]").shouldBe(enabled).click();
         return this;
     }
 
