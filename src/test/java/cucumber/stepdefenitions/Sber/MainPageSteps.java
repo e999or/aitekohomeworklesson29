@@ -10,7 +10,6 @@ public class MainPageSteps {
 
     @Дано("пользователь вводит в адресную строку браузера название сайта Сбербанк.")
     public void openSberBank() {
-        Configuration.timeout = 7000;
         mainPage.openSberBankMainPage();
     }
 }
