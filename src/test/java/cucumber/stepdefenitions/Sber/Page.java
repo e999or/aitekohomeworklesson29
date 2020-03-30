@@ -12,7 +12,7 @@ public class Page {
     @Тогда("переход осуществлен, проверяем название страницы банка{string}.")
     public void chekDepositTitle(String titleText) {
         abstractPage.chekTitleAbstract(titleText);
-        $(".cookie-warning__close").click();
+        abstractPage.closeCookieWarning();
     }
 
     @Когда("нажать на вкладку {string} .")
