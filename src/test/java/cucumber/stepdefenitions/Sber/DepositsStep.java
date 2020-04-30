@@ -12,7 +12,7 @@ public class DepositsStep  {
 
     @Когда("в верхней панели меню сайта нажимаем кнопку Вклады.")
     public void clickDeposit() throws InterruptedException {
-        depositsPage.clickDepositDepositsPage();
+        depositsPage.clickDepositDsP();
     }
 
     @Тогда("переход осуществлен, название страницы {string}.")
@@ -22,27 +22,27 @@ public class DepositsStep  {
 
     @Тогда("отображаются {int} чек-бокса")
     public void fourCheckBox(Integer sizeCheckBox, List<String> dataTable) throws InterruptedException {
-        depositsPage.fourCheckBoxDepositsPage(sizeCheckBox, dataTable);
+        depositsPage.fourCheckBoxDsP(sizeCheckBox, dataTable);
     }
 
     @Тогда("Установлен чекбокс Онлайн ,отображается {int} вкладки")
     public void ceckParamOnLineTabs(Integer tabSize, List<String> dataTable) {
-        depositsPage.checkParamOnLineTabsDepositsPage(tabSize, dataTable);
+        depositsPage.checkParamOnLineTabsDsP(tabSize, dataTable);
     }
 
     @Когда("выбрать чек-боксы Хочу снять, Хочу пополнять.")
     public void clickCheckBox() {
-        depositsPage.clickCheckBoxDepositsPage();
+        depositsPage.clickCheckBoxDsP();
     }
 
     @Тогда("во вкладах остались остался только")
     public void checkDeposit(List<String> dataTable) {
-        depositsPage.checkDepositDepositsPage(dataTable);
+        depositsPage.checkDepositDsP(dataTable);
     }
 
     @Когда("нажать на кнопку {string} вклад Управляй.")
     public void pushButtonManag(String linkText) {
         depositsPage.takeLinkAbstrct(linkText);
-        depositsPage.switchDepositPage();
+        depositsPage.switchDP();
     }
 }

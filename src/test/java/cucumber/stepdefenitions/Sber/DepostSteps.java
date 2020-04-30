@@ -14,6 +14,6 @@ public class DepostSteps {
 
     @Тогда("странице отображается надпись {string}.")
     public void pageHaveDeposit(String text) {
-        managDeosit.pageHaveDepositDepositPage(text);
+        managDeosit.pageHaveDepositDP(text);
     }
 }

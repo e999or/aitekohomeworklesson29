@@ -5,7 +5,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DepositPage extends AbstractPage{
 
-    public DepositPage pageHaveDepositDepositPage(String string) {
+    public DepositPage pageHaveDepositDP(String string) {
         $(".kit-heading").shouldHave(attribute("innerText", string));
         return this;
     }
