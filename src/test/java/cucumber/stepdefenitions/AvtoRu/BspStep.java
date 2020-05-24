@@ -4,11 +4,15 @@ import com.github.e999or.aitekolesson29.AvtoRu.MainPage;
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.Когда;
 import io.cucumber.java.ru.Тогда;
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 
 public class BspStep {
 
     MainPage mainPage = new MainPage();
 
+    @Step("gg")
+    @Description("пользователь вводит в адресную строку браузера название сайта.")
     @Дано("пользователь вводит в адресную строку браузера название сайта.")
     public void open() {
         mainPage.openAvtoMP();

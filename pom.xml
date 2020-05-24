@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.e999or.aitekolesson29</groupId>
@@ -19,8 +19,14 @@
     <webdrivermanager.version>3.8.1</webdrivermanager.version>
     <selenide.version>5.10.0</selenide.version>
     <allure-maven.version>2.10.0</allure-maven.version>
-
     <allure-testng.version>2.13.2</allure-testng.version>
+    <aspectj.version>1.8.10</aspectj.version>
+    <browsermob-proxy.version>2.1.5</browsermob-proxy.version>
+    <cucumber-testng.version>5.5.0</cucumber-testng.version>
+    <cucumber-java.version>5.5.0</cucumber-java.version>
+    <allure-cucumber4-jvm.version>2.13.3</allure-cucumber4-jvm.version>
+    <selenium.version>2.53.1</selenium.version>
+    <allure-maven-plugin.version>2.6</allure-maven-plugin.version>
   </properties>
 
   <dependencies>
@@ -53,19 +59,19 @@
     <dependency>
       <groupId>net.lightbody.bmp</groupId>
       <artifactId>browsermob-proxy</artifactId>
-      <version>2.1.5</version>
+      <version>${browsermob-proxy.version}</version>
       <type>pom</type>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-testng</artifactId>
-      <version>5.5.0</version>
+      <version>${cucumber-testng.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
-      <version>5.5.0</version>
+      <version>${cucumber-java.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -73,6 +79,39 @@
       <artifactId>allure-testng</artifactId>
       <version>${allure-testng.version}</version>
     </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-cucumber4-jvm</artifactId>
+      <version>${allure-cucumber4-jvm.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ru.yandex.qatools.allure</groupId>
+      <artifactId>allure-cucumber-jvm-adaptor</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+    <dependency>
+      <groupId>io.appium</groupId>
+      <artifactId>java-client</artifactId>
+      <version>4.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-project-info-reports-plugin</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-server</artifactId>
+      <version>${selenium.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>ru.yandex.qatools.allure</groupId>
+      <artifactId>allure-maven-plugin</artifactId>
+      <version>${allure-maven-plugin.version}</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -82,12 +121,27 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
+          <forkCount>0</forkCount>
+          <!--<skipTests>false</skipTests>-->
           <suiteXmlFiles>src/test/resources/suites/testng.xml</suiteXmlFiles>
+          <!--<testFailureIgnore>true</testFailureIgnore>-->
+          <argLine>
+            -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+            -Dcucumber.options="--plugin ru.yandex.qatools.allure.cucumberjvm.AllureReporter"
+          </argLine>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
@@ -100,4 +154,15 @@
       </plugin>
     </plugins>
   </build>
+
+  <reporting>
+    <excludeDefaults>true</excludeDefaults>
+    <plugins>
+      <plugin>
+        <groupId>ru.yandex.qatools.allure</groupId>
+        <artifactId>allure-maven-plugin</artifactId>
+        <version>2.6</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>

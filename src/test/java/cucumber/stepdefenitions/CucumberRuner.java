@@ -1,4 +1,4 @@
-package cucumber;
+package cucumber.stepdefenitions;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         plugin = "json:target/cucumber-report.json",
         features = "src/test/resources/suites/feature",
         glue = "cucumber.stepdefenitions",
-tags = "@all")
+tags = "@sber")
 
 
 public class CucumberRuner extends AbstractTestNGCucumberTests {
