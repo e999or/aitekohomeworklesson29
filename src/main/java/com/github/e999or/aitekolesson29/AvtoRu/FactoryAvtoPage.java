@@ -13,7 +13,7 @@ public class FactoryAvtoPage extends PostCount {
 
     public FactoryAvtoPage checkButtonFactoryAP() {
         checkButton = $x("//span[@class='ButtonWithLoader__content']").getAttribute("innerText").replaceAll("\\D+", "");
-       // Assert.assertEquals(checkButton, PostCount.getPostC());
+        Assert.assertEquals(checkButton, PostCount.getPostC());
         return this;
     }
 
