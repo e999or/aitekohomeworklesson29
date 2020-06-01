@@ -11,7 +11,7 @@ public class DepositsStep  {
     DepositsPage depositsPage = new DepositsPage();
 
     @Когда("в верхней панели меню сайта нажимаем кнопку Вклады.")
-    public void clickDeposit() throws InterruptedException {
+    public void clickDeposit() {
         depositsPage.clickDepositDsP();
     }
 
@@ -21,7 +21,7 @@ public class DepositsStep  {
     }
 
     @Тогда("отображаются {int} чек-бокса")
-    public void fourCheckBox(Integer sizeCheckBox, List<String> dataTable) throws InterruptedException {
+    public void fourCheckBox(Integer sizeCheckBox, List<String> dataTable)  {
         depositsPage.fourCheckBoxDsP(sizeCheckBox, dataTable);
     }
 

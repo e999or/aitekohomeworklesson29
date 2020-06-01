@@ -6,7 +6,7 @@ import io.cucumber.java.ru.Тогда;
 
 public class FactoryStep {
 
-    FactoryAvtoPage factoryAvtoPage =new FactoryAvtoPage();
+    private FactoryAvtoPage factoryAvtoPage = new FactoryAvtoPage();
 
     @Когда("Переход осуществлен. Отображается кнопка с текстом, содержащим количество объявлений из п2.")
     public void checkButtonContent() {

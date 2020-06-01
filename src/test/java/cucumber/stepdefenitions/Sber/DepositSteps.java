@@ -3,17 +3,17 @@ package cucumber.stepdefenitions.Sber;
 import com.github.e999or.aitekolesson29.Sber.DepositPage;
 import io.cucumber.java.ru.Тогда;
 
-public class DepostSteps {
+public class DepositSteps {
 
-    DepositPage managDeosit = new DepositPage();
+    DepositPage managDeposit = new DepositPage();
 
     @Тогда("открылось окно с названием {string}.")
     public void checkTitleName(String titleText) {
-        managDeosit.chekTitleAbstract(titleText);
+        managDeposit.chekTitleAbstract(titleText);
     }
 
     @Тогда("странице отображается надпись {string}.")
     public void pageHaveDeposit(String text) {
-        managDeosit.pageHaveDepositDP(text);
+        managDeposit.pageHaveDepositDP(text);
     }
 }

@@ -12,7 +12,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class DepositsPage extends AbstractPage {
 
-    public DepositsPage clickDepositDsP() throws InterruptedException {
+    public DepositsPage clickDepositDsP()  {
         Actions actions = new Actions(getWebDriver());
         $(By.xpath("//span[text() = 'Вклады']")).click();
         actions.moveToElement($(By.linkText("Вклады"))).build().perform();
@@ -20,7 +20,7 @@ public class DepositsPage extends AbstractPage {
         return this;
     }
 
-    public DepositsPage fourCheckBoxDsP(Integer sizeCheckBox, List<String> dataTable) throws InterruptedException {
+    public DepositsPage fourCheckBoxDsP(Integer sizeCheckBox, List<String> dataTable) {
         getWebDriver().switchTo().frame($x("//div[@class='iframe-resizer']/iframe"));
         List<String> nameCheckBox = ($$(By.xpath("//div[@class='kitt-checkbox__text']"))).texts();
         Assert.assertTrue(nameCheckBox.size() == sizeCheckBox);

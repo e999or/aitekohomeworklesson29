@@ -7,7 +7,7 @@ import io.cucumber.java.ru.Тогда;
 
 public class BspStep {
 
-    MainPage mainPage = new MainPage();
+   private MainPage mainPage = new MainPage();
 
     @Дано("пользователь вводит в адресную строку браузера название сайта.")
     public void open() {

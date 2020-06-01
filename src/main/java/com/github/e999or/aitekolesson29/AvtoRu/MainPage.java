@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class MainPage extends PostCount {
 
-    String nameFactory;
+    private String nameFactory;
 
     public MainPage openAvtoMP() {
         Selenide.open("https://www.auto.ru");
